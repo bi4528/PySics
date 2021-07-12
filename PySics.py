@@ -1,34 +1,32 @@
-from random import random
-from time import perf_counter
-
-COUNT = 500000  # Change this value depending on the speed of your computer
-DATA = [(random() - 0.5) * 3 for _ in range(COUNT)]
-
-e = 2.7182818284590452353602874713527
-
-def sinh(x):
-    return (1 - (e ** (-2 * x))) / (2 * (e ** -x))
-
-def cosh(x):
-    return (1 + (e ** (-2 * x))) / (2 * (e ** -x))
-
-def tanh(x):
-    tanh_x = sinh(x) / cosh(x)
-    return tanh_x
-
-def test(fn, name):
-    start = perf_counter()
-    result = fn(DATA)
-    duration = perf_counter() - start
-    print('{} took {:.3f} seconds\n\n'.format(name, duration))
-
-    for d in result:
-        assert -1 <= d <= 1, " incorrect values"
+import PySicsModule as psics
 
 if __name__ == "__main__":
-    print('Running benchmarks with COUNT = {}'.format(COUNT))
-
-    test(lambda d: [tanh(x) for x in d], '[tanh(x) for x in d] (Python implementation)')
     
-    from PySicsModule import fast_tanh2
-    test(lambda d: [fast_tanh2(x) for x in d], '[fast_tanh2(x) for x in d] (PyBind11 C++ extension)')
+    g = psics.graph_type(3)
+    g.set_vertex_label(0, "red")
+    g.set_vertex_label(1, "blue")
+    g.set_vertex_label(2, "green")
+    g.add_edge(0, 1)
+    g.add_edge(1, 2)
+    g.add_edge(2, 0)
+    
+
+    h = psics.graph_type(4)
+    h.set_vertex_label(0, "red")
+    h.set_vertex_label(1, "blue")
+    h.set_vertex_label(2, "green")
+    h.set_vertex_label(3, "green")
+    h.add_edge(0, 1)
+    h.add_edge(1, 2)
+    h.add_edge(2, 0)
+    h.add_edge(1, 3)
+    h.add_edge(3, 0)
+
+    print("Algoritem lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind:", end='\n') 
+    psics.lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(g, h)
+    
+    print("", end='\n') 
+
+    print("Algoritem backtracking_ind:", end='\n') 
+    psics.backtracking_ind(g, h)
+    
