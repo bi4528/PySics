@@ -11,6 +11,8 @@
     <OutputPath>.</OutputPath>
     <Name>PySics</Name>
     <RootNamespace>PySics</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>True</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
