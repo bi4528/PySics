@@ -1,5 +1,5 @@
 #import PySicsModule as psics
-from PySicsModule import adjacency_list_bidirectional_tag_alg as alg, adjacency_list_bidirectional_tag as graph
+from PySicsModule import adjacency_listmat_undirected_tag_alg as alg, adjacency_degreesortedlistmat_undirected_tag_alg as alg_ds, adjacency_listmat_undirected_tag as graph, adjacency_degreesortedlistmat_undirected_tag as graph_ds
 
 if __name__ == "__main__":
     
@@ -22,5 +22,14 @@ if __name__ == "__main__":
     n.add_edge(1, 3)
     n.add_edge(3, 0)
 
+    m_ds = graph_ds(m)
+
+    n_ds = graph_ds(n)
+
     c = alg()
-    c.lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(m, n, "GCF")
+    c.backtracking_parent_ind(m, n, "GCF")
+
+    ds = alg_ds()
+    #ds.lazyforwardchecking_parent_ind(m_ds, n_ds, "GCF")
+    #ds.backtracking_parent_adjacentconsistency_ind(m_ds, n_ds, "GCF")
+    
