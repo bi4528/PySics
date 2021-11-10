@@ -1,35 +1,329 @@
-#import PySicsModule as psics
-from PySicsModule import adjacency_listmat_undirected_tag_alg as alg, adjacency_degreesortedlistmat_undirected_tag_alg as alg_ds, adjacency_listmat_undirected_tag as graph, adjacency_degreesortedlistmat_undirected_tag as graph_ds
 
-if __name__ == "__main__":
-    
-    m = graph(3)
-    m.set_vertex_label(0, "red")
-    m.set_vertex_label(1, "blue")
-    m.set_vertex_label(2, "green")
-    m.add_edge(0, 1)
-    m.add_edge(1, 2)
-    m.add_edge(2, 0)
+from PySicsModule import (
+    adjacency_list_undirected_tag,
+    adjacency_list_undirected_tag_alg, 
+    adjacency_list_bidirectional_tag,
+    adjacency_list_bidirectional_tag_alg, 
+    adjacency_listmat_undirected_tag,
+    adjacency_listmat_undirected_tag_alg, 
+    adjacency_listmat_bidirectional_tag,
+    adjacency_listmat_bidirectional_tag_alg,
+    adjacency_degreesortedlistmat_undirected_tag,
+    adjacency_degreesortedlistmat_undirected_tag_alg,
+    adjacency_degreesortedlistmat_bidirectional_tag,
+    adjacency_degreesortedlistmat_bidirectional_tag_alg,
+)
 
-    n = graph(4)
-    n.set_vertex_label(0, "red")
-    n.set_vertex_label(1, "blue")
-    n.set_vertex_label(2, "green")
-    n.set_vertex_label(3, "green")
-    n.add_edge(0, 1)
-    n.add_edge(1, 2)
-    n.add_edge(2, 0)
-    n.add_edge(1, 3)
-    n.add_edge(3, 0)
+__all__ = ['Graph', 'SicsAlgorithams']
 
-    m_ds = graph_ds(m)
+class Graph:
 
-    n_ds = graph_ds(n)
+    def __init__(self, data_structure, graph_type, num_vertices):
+        
+        self.data_structure_str = data_structure
+        self.graph_type_str = graph_type
+        self.num_vertices = num_vertices
 
-    c = alg()
-    c.backtracking_parent_ind(m, n, "GCF")
+        valid_data_structures = {"adjacency_list", "adjacency_listmat", "adjacency_degreesortedlistmat"}
+        valid_graph_types = {"undirected_tag", "bidirectional_tag"}
 
-    ds = alg_ds()
-    #ds.lazyforwardchecking_parent_ind(m_ds, n_ds, "GCF")
-    #ds.backtracking_parent_adjacentconsistency_ind(m_ds, n_ds, "GCF")
-    
+        if data_structure not in valid_data_structures:
+             raise ValueError('_init_: data structure must be one of %r.' % valid_data_structures)
+
+        if graph_type not in valid_graph_types:
+             raise ValueError("_init_: graph type must be one of %r." % valid_graph_types)
+
+        if (data_structure == "adjacency_list" and  graph_type == "undirected_tag"):
+            self.graph_type = adjacency_list_undirected_tag
+        elif (data_structure == "adjacency_list" and  graph_type == "bidirectional_tag"):
+           self.graph_type = adjacency_list_bidirectional_tag
+        elif (data_structure == "adjacency_listmat" and  graph_type == "undirected_tag"):
+           self.graph_type = adjacency_listmat_undirected_tag
+        elif (data_structure == "adjacency_listmat" and  graph_type == "bidirectional_tag"):
+           self.graph_type = adjacency_listmat_bidirectional_tag
+        elif (data_structure == "adjacency_degreesortedlistmat" and  graph_type == "undirected_tag"):
+           self.graph_type = adjacency_degreesortedlistmat_undirected_tag
+        elif (data_structure == "adjacency_degreesortedlistmat" and  graph_type == "bidirectional_tag"):
+           self.graph_type = adjacency_degreesortedlistmat_bidirectional_tag
+
+        self.graph = self.graph_type(self.num_vertices)
+
+    def set_vertex_label(self, vertex, label):
+
+        self.graph.set_vertex_label(vertex, label)
+
+    def add_edge(self, vertex1, vertex2):
+
+        self.graph.add_edge(vertex1, vertex2)
+
+class SicsAlgorithams:
+
+    def __init__(self, data_structure, graph_type,):
+        
+        self.data_structure_str = data_structure
+        self.graph_type_str = graph_type
+
+        valid_data_structures = {"adjacency_list", "adjacency_listmat", "adjacency_degreesortedlistmat"}
+        valid_graph_types = {"undirected_tag", "bidirectional_tag"}
+
+        if data_structure not in valid_data_structures:
+             raise ValueError('_init_: data structure must be one of %r.' % valid_data_structures)
+
+        if graph_type not in valid_graph_types:
+             raise ValueError("_init_: graph type must be one of %r." % valid_graph_types)
+
+        if (data_structure == "adjacency_list" and  graph_type == "undirected_tag"):
+            self.graph_type_alg = adjacency_list_undirected_tag_alg
+        elif (data_structure == "adjacency_list" and  graph_type == "bidirectional_tag"):
+           self.graph_type_alg = adjacency_list_bidirectional_tag_alg
+        elif (data_structure == "adjacency_listmat" and  graph_type == "undirected_tag"):
+           self.graph_type_alg = adjacency_listmat_undirected_tag_alg
+        elif (data_structure == "adjacency_listmat" and  graph_type == "bidirectional_tag"):
+           self.graph_type_alg = adjacency_listmat_bidirectional_tag_alg
+        elif (data_structure == "adjacency_degreesortedlistmat" and  graph_type == "undirected_tag"):
+           self.graph_type_alg = adjacency_degreesortedlistmat_undirected_tag_alg
+        elif (data_structure == "adjacency_degreesortedlistmat" and  graph_type == "bidirectional_tag"):
+           self.graph_type_alg = adjacency_degreesortedlistmat_bidirectional_tag_alg
+
+        self.alg = self.graph_type_alg()
+
+    def backjumping_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backjumping_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backjumping_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backjumping_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backjumping_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backjumping_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backjumping_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backjumping_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backjumping_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_degreeprune_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_degreeprune_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_degreeprune_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_degreeprune_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_degreeprune_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_degreeprune_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_forwardcount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_degreeprune_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_degreeprune_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_degreeprune_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_degreeprune_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_degreeprune_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_degreeprune_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_forwardcount_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def backtracking_parent_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.backtracking_parent_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def conflictbackjumping_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+    self.alg.conflictbackjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def conflictbackjumping_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.conflictbackjumping_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def conflictbackjumping_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.conflictbackjumping_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_degreeprune_ac1_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_degreeprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_mrv_degreeprune_ac1_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_mrv_degreeprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_mrv_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_mrv_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_bitset_mrv_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def forwardchecking_mrv_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.forwardchecking_mrv_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_low_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_low_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_low_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_low_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_low_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_low_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_low_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_low_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_low_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_low_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_low_parent_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_low_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_low_parent_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_low_parent_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_parent_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_parent_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_parent_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardchecking_parent_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardchecking_parent_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+
+    def lazyforwardcheckingbackjumping_low_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+
+        self.alg.lazyforwardcheckingbackjumping_low_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+
