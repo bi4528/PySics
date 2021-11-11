@@ -22,5 +22,5 @@ if __name__ == "__main__":
     n.add_edge(1, 3)
     n.add_edge(3, 0)
 
-    c = SicsAlgorithams("adjacency_list", "undirected_tag1")
+    c = SicsAlgorithams("adjacency_list", "undirected_tag")
     c.backtracking_parent_ind(m, n, "GCF")

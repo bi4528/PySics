@@ -20,10 +20,6 @@ class Graph:
 
     def __init__(self, data_structure, graph_type, num_vertices):
         
-        self.data_structure_str = data_structure
-        self.graph_type_str = graph_type
-        self.num_vertices = num_vertices
-
         valid_data_structures = {"adjacency_list", "adjacency_listmat", "adjacency_degreesortedlistmat"}
         valid_graph_types = {"undirected_tag", "bidirectional_tag"}
 
@@ -32,6 +28,9 @@ class Graph:
 
         if graph_type not in valid_graph_types:
              raise ValueError("_init_: graph type must be one of %r." % valid_graph_types)
+
+        if not isinstance(num_vertices, int):
+             raise ValueError("_init_: number od verticies must be type int.")
 
         if (data_structure == "adjacency_list" and  graph_type == "undirected_tag"):
             self.graph_type = adjacency_list_undirected_tag
@@ -46,7 +45,7 @@ class Graph:
         elif (data_structure == "adjacency_degreesortedlistmat" and  graph_type == "bidirectional_tag"):
            self.graph_type = adjacency_degreesortedlistmat_bidirectional_tag
 
-        self.graph = self.graph_type(self.num_vertices)
+        self.graph = self.graph_type(num_vertices)
 
     def set_vertex_label(self, vertex, label):
 
@@ -58,7 +57,7 @@ class Graph:
 
 class SicsAlgorithams:
 
-    def __init__(self, data_structure, graph_type,):
+    def __init__(self, data_structure, graph_type):
         
         self.data_structure_str = data_structure
         self.graph_type_str = graph_type
@@ -193,7 +192,7 @@ class SicsAlgorithams:
 
     def conflictbackjumping_degreeprune_ind(self, graph1, graph2, vertex_order):
 
-    self.alg.conflictbackjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.conflictbackjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
 
     def conflictbackjumping_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
 
