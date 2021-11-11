@@ -233,25 +233,40 @@ class SicsAlgorithams:
 
         self.alg.forwardchecking_bitset_mrv_degreeprune_ac1_ind(graph1.graph, graph2.graph)
 
-    def forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order=None):
 
-        self.alg.forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-    def forwardchecking_bitset_mrv_degreeprune_ind(self, graph1, graph2, vertex_order):
+        self.alg.forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph)
 
-        self.alg.forwardchecking_bitset_mrv_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+    def forwardchecking_bitset_mrv_degreeprune_ind(self, graph1, graph2, vertex_order=None):
 
-    def forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order):
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_bitset_mrv_degreeprune_ind(graph1.graph, graph2.graph)
 
-    def forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order=None):
 
-        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-    def forwardchecking_bitset_mrv_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph)
 
-        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+    def forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order=None):
+        
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
+
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph)
+
+    def forwardchecking_bitset_mrv_degreesequenceprune_ind(self, graph1, graph2, vertex_order=None):
+
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_bitset_mrv_degreesequenceprune_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
+
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ind(graph1.graph, graph2.graph)
 
     def forwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order):
 
@@ -265,9 +280,12 @@ class SicsAlgorithams:
 
         self.alg.forwardchecking_ind(graph1.graph, graph2.graph, vertex_order)
 
-    def forwardchecking_mrv_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_mrv_degreeprune_ind(self, graph1, graph2, vertex_order=None):
+        
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_mrv_degreeprune_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_mrv_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_mrv_degreeprune_ind(graph1.graph, graph2.graph)
 
     def lazyforwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order):
 
