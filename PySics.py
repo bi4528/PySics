@@ -24,13 +24,13 @@ class Graph:
         valid_graph_types = {"undirected_tag", "bidirectional_tag"}
 
         if data_structure not in valid_data_structures:
-             raise ValueError('_init_: data structure must be one of %r.' % valid_data_structures)
+             raise ValueError('_init_() argument \'data_structure\' must be one of %r.' % valid_data_structures)
 
         if graph_type not in valid_graph_types:
-             raise ValueError("_init_: graph type must be one of %r." % valid_graph_types)
+             raise ValueError("_init_() argument \'graph_type must\' be one of %r." % valid_graph_types)
 
         if not isinstance(num_vertices, int):
-             raise ValueError("_init_: number od verticies must be type int.")
+             raise ValueError("_init_() argument \'num_verticies\' must be type int.")
 
         if (data_structure == "adjacency_list" and  graph_type == "undirected_tag"):
             self.graph_type = adjacency_list_undirected_tag
@@ -226,9 +226,12 @@ class SicsAlgorithams:
 
         self.alg.forwardchecking_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
 
-    def forwardchecking_bitset_mrv_degreeprune_ac1_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_mrv_degreeprune_ac1_ind(self, graph1, graph2, vertex_order=None):
 
-        self.alg.forwardchecking_bitset_mrv_degreeprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_bitset_mrv_degreeprune_ac1_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
+
+        self.alg.forwardchecking_bitset_mrv_degreeprune_ac1_ind(graph1.graph, graph2.graph)
 
     def forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
 

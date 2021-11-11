@@ -23,4 +23,4 @@ if __name__ == "__main__":
     n.add_edge(3, 0)
 
     c = SicsAlgorithams("adjacency_list", "undirected_tag")
-    c.backtracking_parent_ind(m, n, "GCF")
+    c.forwardchecking_bitset_mrv_degreeprune_ac1_ind(m, n)
