@@ -86,264 +86,266 @@ class SicsAlgorithams:
 
         self.alg = self.graph_type_alg()
 
-    def backjumping_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def backjumping_bitset_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backjumping_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backjumping_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backjumping_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def backjumping_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backjumping_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backjumping_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backjumping_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def backjumping_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backjumping_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def backjumping_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backjumping_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backjumping_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backjumping_ind(self, graph1, graph2, vertex_order):
+    def backjumping_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backjumping_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backjumping_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+    def backtracking_adjacentconsistency_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def backtracking_bitset_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def backtracking_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_degreeprune_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_degreeprune_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_degreeprune_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_degreeprune_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_degreeprune_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+    def backtracking_degreeprune_adjacentconsistency_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_degreeprune_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_degreeprune_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_degreeprune_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_degreeprune_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_degreeprune_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_degreeprune_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def backtracking_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def backtracking_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_forwardcount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_forwardcount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_forwardcount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_ind(self, graph1, graph2, vertex_order):
+    def backtracking_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_adjacentconsistency_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_degreeprune_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_degreeprune_adjacentconsistency_forwardcount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_degreeprune_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_degreeprune_adjacentconsistency_forwardcount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_degreeprune_adjacentconsistency_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_degreeprune_adjacentconsistency_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_degreeprune_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_degreeprune_adjacentconsistency_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_degreeprune_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_degreeprune_adjacentconsistency_precount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_degreeprune_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_degreeprune_adjacentconsistency_precount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_forwardcount_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_forwardcount_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_forwardcount_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_forwardcount_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def backtracking_parent_ind(self, graph1, graph2, vertex_order):
+    def backtracking_parent_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.backtracking_parent_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.backtracking_parent_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def conflictbackjumping_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def conflictbackjumping_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.conflictbackjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.conflictbackjumping_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def conflictbackjumping_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def conflictbackjumping_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.conflictbackjumping_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.conflictbackjumping_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def conflictbackjumping_ind(self, graph1, graph2, vertex_order):
+    def conflictbackjumping_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.conflictbackjumping_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.conflictbackjumping_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_bitset_degreeprune_ac1_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_degreeprune_ac1_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_bitset_degreeprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_bitset_degreeprune_ac1_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_bitset_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_bitset_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_bitset_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_bitset_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_bitset_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_bitset_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_bitset_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_bitset_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_bitset_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_bitset_mrv_degreeprune_ac1_ind(self, graph1, graph2, vertex_order=None):
+    def forwardchecking_bitset_mrv_degreeprune_ac1_ind(self, graph1, graph2, vertex_order=None, mapping=False):
 
         if vertex_order is not None:
             raise AttributeError("forwardchecking_bitset_mrv_degreeprune_ac1_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_bitset_mrv_degreeprune_ac1_ind(graph1.graph, graph2.graph)
+        self.alg.forwardchecking_bitset_mrv_degreeprune_ac1_ind(graph1.graph, graph2.graph, mapping)
 
-    def forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order=None):
-
-        if vertex_order is not None:
-            raise AttributeError("forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
-
-        self.alg.forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph)
-
-    def forwardchecking_bitset_mrv_degreeprune_ind(self, graph1, graph2, vertex_order=None):
+    def forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(self, graph1, graph2, vertex_order=None, mapping=False):
 
         if vertex_order is not None:
             raise AttributeError("forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_bitset_mrv_degreeprune_ind(graph1.graph, graph2.graph)
+        self.alg.forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind(graph1.graph, graph2.graph, mapping)
 
-    def forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order=None):
+    def forwardchecking_bitset_mrv_degreeprune_ind(self, graph1, graph2, vertex_order=None, mapping=False):
+
+        if vertex_order is not None:
+            raise AttributeError("forwardchecking_bitset_mrv_degreeprune_countingalldifferent_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
+
+        self.alg.forwardchecking_bitset_mrv_degreeprune_ind(graph1.graph, graph2.graph, mapping)
+
+    def forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(self, graph1, graph2, vertex_order=None, mapping=False):
 
         if vertex_order is not None:
             raise AttributeError("forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph)
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(graph1.graph, graph2.graph, mapping)
 
-    def forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order=None):
+    def forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(self, graph1, graph2, vertex_order=None, mapping=False):
         
         if vertex_order is not None:
             raise AttributeError("forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph)
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(graph1.graph, graph2.graph, mapping)
 
-    def forwardchecking_bitset_mrv_degreesequenceprune_ind(self, graph1, graph2, vertex_order=None):
+    def forwardchecking_bitset_mrv_degreesequenceprune_ind(self, graph1, graph2, vertex_order=None, mapping=False):
 
         if vertex_order is not None:
             raise AttributeError("forwardchecking_bitset_mrv_degreesequenceprune_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ind(graph1.graph, graph2.graph)
+        self.alg.forwardchecking_bitset_mrv_degreesequenceprune_ind(graph1.graph, graph2.graph, mapping)
 
-    def forwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_ind(self, graph1, graph2, vertex_order):
+    def forwardchecking_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.forwardchecking_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.forwardchecking_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def forwardchecking_mrv_degreeprune_ind(self, graph1, graph2, vertex_order=None):
+    def forwardchecking_mrv_degreeprune_ind(self, graph1, graph2, vertex_order=None, mapping=False):
         
         if vertex_order is not None:
             raise AttributeError("forwardchecking_mrv_degreeprune_ind() vertex_order is not supported for this algoritham. MRV algorithams already use dynamic search strategy Minimum Remaining Values.")
 
-        self.alg.forwardchecking_mrv_degreeprune_ind(graph1.graph, graph2.graph)
+        self.alg.forwardchecking_mrv_degreeprune_ind(graph1.graph, graph2.graph, mapping)
 
-    def lazyforwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_low_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_low_bitset_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_low_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_low_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_low_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_low_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_low_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_low_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_low_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_low_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_low_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_low_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_low_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_low_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_low_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_low_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_low_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_low_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_low_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_low_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_low_parent_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_low_parent_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_low_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_low_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_low_parent_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_low_parent_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_low_parent_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_low_parent_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_parent_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_parent_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_parent_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_parent_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_parent_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_parent_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_parent_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardchecking_parent_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardchecking_parent_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardchecking_parent_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardchecking_parent_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardcheckingbackjumping_low_bitset_degreeprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
 
-    def lazyforwardcheckingbackjumping_low_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order):
+    def lazyforwardcheckingbackjumping_low_bitset_degreesequenceprune_ind(self, graph1, graph2, vertex_order, mapping=False):
 
-        self.alg.lazyforwardcheckingbackjumping_low_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order)
+        self.alg.lazyforwardcheckingbackjumping_low_bitset_degreesequenceprune_ind(graph1.graph, graph2.graph, vertex_order, mapping)
+
+
 

@@ -23,7 +23,4 @@ if __name__ == "__main__":
     n.add_edge(3, 0)
 
     c = SicsAlgorithams("adjacency_list", "bidirectional_tag")
-    c.forwardchecking_bitset_mrv_degreesequenceprune_ac1_ind(m, n)
-    c.forwardchecking_bitset_mrv_degreesequenceprune_countingalldifferent_ind(m, n)
-    c.forwardchecking_bitset_mrv_degreesequenceprune_ind(m, n)
     c.forwardchecking_mrv_degreeprune_ind(m, n)
